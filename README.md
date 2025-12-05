@@ -1,18 +1,22 @@
-주소 인젝션이 답이었습니다.
-vim node_modules/@metamask/network-controller/dist/create-network-client.cjs
-에서
-// https와 infura.io가 하드코딩 되어 있음
-const url = `https://${network}.infura.io/v3/${projectId}`;
-를
-// 껍데기를 다 벗기고 알맹이(Project ID)만 URL로 씁니다.
-const url = `${projectId}`; 
+주소 인젝션이 답이었습니다.  <br>
+vim node_modules/@metamask/network-controller/dist/create-network-client.cjs 에서 <br>
+<br>
+function createNetworkClient({ id, configuration, getRpcServiceOptions, getBlockTrackerOptions, messenger, isRpcFailoverEnabled, logger, }) {
+    const primaryEndpointUrl = configuration.type === types_1.NetworkClientType.Infura
+        ? `${configuration.infuraProjectId}`
+        : configuration.rpcUrl;
+<br>
+이구조로 변형<br>
+// https와 infura.io가 하드코딩 되어 있음   <br>
+const url = `https://${network}.infura.io/v3/${projectId}`;  를<br>
+// 껍데기를 다 벗기고 알맹이(Project ID)만 URL로 씁니다. <br>
+const url = `${projectId}`;    <br>
 
-추가적으로
-vim app/constants/network.js
-// 기존: export const INFURA_PROJECT_ID = process.env.MM_INFURA_PROJECT_ID;
-
-// 수정 (인젝션):
-export const INFURA_PROJECT_ID = 'http://*.*.*.*:4553';
+추가적으로 <br>
+vim app/constants/network.js <br>
+// 기존: export const INFURA_PROJECT_ID = process.env.MM_INFURA_PROJECT_ID; <br>
+// 수정 (인젝션): <br>
+export const INFURA_PROJECT_ID = 'http://*.*.*.*:4553';  <br>
 
 
 
