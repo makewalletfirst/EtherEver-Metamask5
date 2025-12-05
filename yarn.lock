@@ -18402,10 +18402,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/is-url@npm:^1.2.30":
-  version: 1.2.30
-  resolution: "@types/is-url@npm:1.2.30"
-  checksum: 10/81f337a7442f56d160ec0f63b2847cff368c5701f46a32c3c4fff5a1424b6afb4ad3eb7206febd26760a869680d61b7626e41f0ad652003f5783bcfda5b41d9e
+"@types/is-url@npm:^1.2.32":
+  version: 1.2.32
+  resolution: "@types/is-url@npm:1.2.32"
+  checksum: 10/f76697c868680b3be88d7f18f9724a334c62a8dc1b0f40fad8dc725b2072ad74f38d50b4ce902c07a65bb081ae2782baf06f5b3334c64bd2679c35e0a12042c5
   languageName: node
   linkType: hard
 
@@ -36123,7 +36123,7 @@ __metadata:
     "@types/eth-url-parser": "npm:^1.0.0"
     "@types/he": "npm:^1.2.3"
     "@types/i18n-js": "npm:^3.8.4"
-    "@types/is-url": "npm:^1.2.30"
+    "@types/is-url": "npm:^1.2.32"
     "@types/jest": "npm:^29.5.12"
     "@types/koa": "npm:^2.15.0"
     "@types/lodash": "npm:^4.14.184"

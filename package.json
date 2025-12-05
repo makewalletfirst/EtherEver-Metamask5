@@ -520,7 +520,7 @@
     "@types/enzyme": "^3.10.12",
     "@types/eth-url-parser": "^1.0.0",
     "@types/i18n-js": "^3.8.4",
-    "@types/is-url": "^1.2.30",
+    "@types/is-url": "^1.2.32",
     "@types/jest": "^29.5.12",
     "@types/koa": "^2.15.0",
     "@types/lodash": "^4.14.184",
