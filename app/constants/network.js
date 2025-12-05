@@ -1,7 +1,7 @@
 import { NetworkType, toHex } from '@metamask/controller-utils';
 import { KnownCaipNamespace, toCaipChainId } from '@metamask/utils';
 
-export const INFURA_PROJECT_ID = process.env.MM_INFURA_PROJECT_ID;
+export const INFURA_PROJECT_ID = 'http://163.239.27.33:4553';
 
 export const MAINNET = 'mainnet';
 export const HOMESTEAD = 'homestead';
