@@ -1,3 +1,25 @@
+주소 인젝션이 답이었습니다.
+vim node_modules/@metamask/network-controller/dist/create-network-client.cjs
+에서
+// https와 infura.io가 하드코딩 되어 있음
+const url = `https://${network}.infura.io/v3/${projectId}`;
+를
+// 껍데기를 다 벗기고 알맹이(Project ID)만 URL로 씁니다.
+const url = `${projectId}`; 
+
+추가적으로
+vim app/constants/network.js
+// 기존: export const INFURA_PROJECT_ID = process.env.MM_INFURA_PROJECT_ID;
+
+// 수정 (인젝션):
+export const INFURA_PROJECT_ID = 'http://*.*.*.*:4553';
+
+
+
+
+
+
+
 인기 1순위 <br>
 티커 알피시 대체 <br>
 블록브라우저 체인아이디 <br>
@@ -28,10 +50,10 @@ vim app/components/Views/NetworkSelector/NetworkSelector.tsx <br>
 내용: chainId: '0x1' -> chainId: '0xe2c3'
 
 vim app/core/Engine/controllers/transaction-controller/data-helpers.ts <br>
-수정할 줄: 26번 줄
+수정할 줄: 26번 줄   얘는 여기서 절대로 밑에 있는 ETH 티커를 변경하면 안됨 그러면 오히려 꼬임
 
 내용: chainId: '0x1' -> chainId: '0xe2c3'
 
 <br>
-성공
+위에 cjs mjs까지 하고 밑에도 다하면 성공
 <br>
